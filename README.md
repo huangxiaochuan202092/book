@@ -28,7 +28,7 @@ Go 项目：图书管理系统
 安装 Go 语言开发环境。
 安装 MySQL 数据库。
 创建项目目录，并初始化 Go 模块：
-shmkdir book-management-system
+mkdir book-management-system
 cd book-management-system
 go mod init github.com/yourusername/book-management-system
 2. 数据库设计
@@ -50,7 +50,7 @@ go mod init github.com/yourusername/book-management-system
 本地docker运行项目步骤
 
 安装依赖
-shgo get "github.com/gin-gonic/gin"
+go get "github.com/gin-gonic/gin"
 go get "gorm.io/driver/mysql"
 go get "gorm.io/gorm"
 
@@ -62,15 +62,15 @@ go get "gorm.io/gorm"
 
 安装 Docker，配置镜像加速
 下载镜像
-shdocker pull golang:1.23-alpine
+docker pull golang:1.23-alpine
 docker pull alpine:latest
 
 构建镜像
-shdocker build --no-cache -t "book-management-api:latest" .
+docker build --no-cache -t "book-management-api:latest" .
 
 运行镜像
 使用 host.docker.internal（仅适用于 Docker Desktop）：
-shdocker run -p 8080:8080 -e DB_HOST=host.docker.internal --name my-book book-management-api:latest
+docker run -p 8080:8080 -e DB_HOST=host.docker.internal --name my-book book-management-api:latest
 
 浏览器访问页面
 在浏览器中访问 localhost:8080 即可打开图书管理系统页面。
