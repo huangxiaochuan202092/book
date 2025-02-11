@@ -33,8 +33,11 @@ Go 项目：图书管理系统
 安装 Go 语言开发环境。
 安装 MySQL 数据库。
 创建项目目录，并初始化 Go 模块：
+
 mkdir book-management-system
+
 cd book-management-system
+
 go mod init github.com/yourusername/book-management-system
 
 3. 数据库设计
@@ -61,19 +64,27 @@ go mod init github.com/yourusername/book-management-system
 安装依赖
 
 go get "github.com/gin-gonic/gin"
+
 go get "gorm.io/driver/mysql"
+
 go get "gorm.io/gorm"
 
 安装 MySQL 数据库
+
 主机：127.0.0.1
+
 数据库：user_db
+
 端口：3306
+
 密码：123456
 
 安装 Docker，配置镜像加速
+
 下载镜像
 
 docker pull golang:1.23-alpine
+
 docker pull alpine:latest
 
 构建镜像
