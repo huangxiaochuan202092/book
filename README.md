@@ -100,3 +100,36 @@ docker run -p 8080:8080 -e DB_HOST=host.docker.internal --name my-book book-mana
 浏览器访问页面
 
 在浏览器中访问 localhost:8080 即可打开图书管理系统页面。
+book
+接口测试
+
+curl -X POST http://localhost:8080/books -H "Content-Type: application/json" -d '{"title": "Go Programming", "author": "John Doe", "year": 2023}'
+curl http://localhost:8080/books
+curl http://localhost:8080/books/1
+
+curl -X PUT http://localhost:8080/books/1 -H "Content-Type: application/json" -d '{"title": "Updated Book", "author": "Jane Smith", "year": 2024}'
+curl -X DELETE http://localhost:8080/books/1
+
+
+user 测试 没上传代码
+用户登录
+curl -X POST http://localhost:8080/login -H "Content-Type: application/json" -d '{
+    "id_card": "123456789012345678",
+    "password": "password123"
+}'
+
+查询所有用户
+curl http://localhost:8080/users
+
+根据身份证号查询用户
+curl http://localhost:8080/user/123456789012345678
+
+更新用户信息:
+curl -X PUT http://localhost:8080/update -H "Content-Type: application/json" -d '{
+    "id_card": "123456789012345678",
+    "name": "Jane Doe",
+    "age": 31
+}'
+
+删除用户:
+curl -X DELETE http://localhost:8080/delete/123456789012345678
