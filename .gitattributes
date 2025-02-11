@@ -1,0 +1,7 @@
+# 对所有文本文件应用统一的换行符处理规则
+* text=auto
+
+# 对于特定文件，强制使用 LF 换行符
+*.go text eol=lf
+*.mod text eol=lf
+*.sum text eol=lf
