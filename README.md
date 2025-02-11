@@ -48,23 +48,29 @@ go mod init github.com/yourusername/book-management-system
 
 
 本地docker运行项目步骤
+
 安装依赖
 shgo get "github.com/gin-gonic/gin"
 go get "gorm.io/driver/mysql"
 go get "gorm.io/gorm"
+
 安装 MySQL 数据库
 主机：127.0.0.1
 数据库：user_db
 端口：3306
 密码：123456
+
 安装 Docker，配置镜像加速
 下载镜像
 shdocker pull golang:1.23-alpine
 docker pull alpine:latest
+
 构建镜像
 shdocker build --no-cache -t "book-management-api:latest" .
+
 运行镜像
 使用 host.docker.internal（仅适用于 Docker Desktop）：
 shdocker run -p 8080:8080 -e DB_HOST=host.docker.internal --name my-book book-management-api:latest
+
 浏览器访问页面
 在浏览器中访问 localhost:8080 即可打开图书管理系统页面。
